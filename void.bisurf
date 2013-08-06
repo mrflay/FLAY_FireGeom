@@ -1,0 +1,11 @@
+Density = 1.225;
+Thickness = 0.001;
+rough = 0;
+dust = 0;
+bulletPenetrability = 1000000;
+soundEnviron = "Empty";
+isWater = "false";
+friction = 0;
+restitution = 0.5;
+impact = "hitPlastic";
+soundHit = "Empty";
