@@ -22,25 +22,11 @@ class CfgVehicles
 		hiddenSelectionsTextures[] = {"#(argb,8,8,3)color(1,1,1,0,CA)"};
 	};
 	
-	class FLAY_FireGeom_Red: FLAY_FireGeom
+	class FLAY_FireGeom_Debug: FLAY_FireGeom
 	{
 		scope=2;
-		displayName = "FireGeom [RED]";
+		displayName = "FireGeom [DEBUG]";
 		hiddenSelectionsTextures[] = {"#(argb,8,8,3)color(1,0,0,0.2,CA)"};
-	};
-	
-	class FLAY_FireGeom_Green: FLAY_FireGeom
-	{
-		scope=2;
-		displayName = "FireGeom [GREEN]";
-		hiddenSelectionsTextures[] = {"#(argb,8,8,3)color(0,1,0,0.2,CA)"};
-	};		
-	
-	class FLAY_FireGeom_Blue: FLAY_FireGeom
-	{
-		scope=2;
-		displayName = "FireGeom [BLUE]";
-		hiddenSelectionsTextures[] = {"#(argb,8,8,3)color(0,0,1,0.2,CA)"};
 	};
 	
 	class Static;
@@ -70,4 +56,20 @@ class CfgVehicles
 			class RX: R0 {};
 		};
 	};		
+};
+
+class CfgFunctions
+{
+	class FLAY
+	{
+		tag = "FLAY";
+		class debug
+		{
+			file = "\FLAY\FLAY_FireGeom\scripts";
+			class trajectory
+			{
+				description="Displays the trajectory of the bullet when fired."; 
+			};
+		};
+	};
 };
