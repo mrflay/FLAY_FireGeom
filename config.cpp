@@ -9,27 +9,38 @@ class CfgPatches
 	};
 };
 
+class DefaultEventHandler;
+
 class CfgVehicles
 {
-	class Thing;
-	class FLAY_FireGeom: Thing
+	class Static;
+	class FLAY_FireGeom: Static
 	{
 		scope=2;
 		displayName = "FireGeom";
 		model="\FLAY\FLAY_FireGeom\FLAY_FireGeom.p3d";
 		mapSize = 10;
-		hiddenSelections[] = {"camo"};
-		hiddenSelectionsTextures[] = {"#(argb,8,8,3)color(1,1,1,0,CA)"};
+		class AnimationSources
+		{
+			class Hide
+			{
+				source = "user";
+				initPhase = 0;
+				animPeriod = 0.0000001;
+			};
+		};
 	};
 	
 	class FLAY_FireGeom_Debug: FLAY_FireGeom
 	{
 		scope=2;
 		displayName = "FireGeom [DEBUG]";
+		model="\FLAY\FLAY_FireGeom\FLAY_FireGeom_Debug.p3d";
+		hiddenSelections[] = {"camo"};
 		hiddenSelectionsTextures[] = {"#(argb,8,8,3)color(1,0,0,0.2,CA)"};
 	};
 	
-	class Static;
+	//class Static;
 	class FLAY_Line: Static
 	{
 		scope = 2;
@@ -69,7 +80,7 @@ class CfgFunctions
 			class trajectory
 			{
 				description="Displays the trajectory of the bullet when fired."; 
-			};
+			};			
 		};
 	};
 };
